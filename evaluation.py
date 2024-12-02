@@ -14,6 +14,7 @@ def association_depth_auroc(color1, color2, size):
     img_auroc = [0.8410, 0.8430, 0.8460, 0.8490, 0.8515, 0.8502, 0.8520, 0.8550, 0.8550]
     pix_auroc = [0.8890, 0.8958, 0.9017, 0.9079, 0.9166, 0.9205, 0.9226, 0.92385, 0.9240]
     plt.rcParams['figure.figsize'] = size
+    plt.grid(True)
     plt.plot(assoc_depth, img_auroc, label = 'Image AUROC', color=color1, lw=1, linestyle='--', marker='o')
     plt.plot(assoc_depth, pix_auroc, label = 'Pixel AUROC', color=color2, lw=1, linestyle='--', marker='o')
     plt.legend()
@@ -51,6 +52,7 @@ def maximum_channel_auroc(color1, color2, size):
     img_auroc = [0.8410, 0.8430, 0.8462, 0.8493, 0.8515, 0.8520, 0.8550, 0.8554, 0.8553, 0.8553, 0.8553, 0.8553, 0.8552, 0.8551, 0.8550]
     pix_auroc = [0.8890, 0.8958, 0.9017, 0.9079, 0.9166, 0.9205, 0.9226, 0.92385, 0.9240, 0.9204, 0.9180, 0.9120, 0.9040, 0.8980, 0.8940]
     plt.rcParams['figure.figsize'] = size
+    plt.grid(True)
     plt.plot(assoc_depth, img_auroc, label = 'Image AUROC', color=color1, lw=1, linestyle='--', marker='o')
     plt.plot(assoc_depth, pix_auroc, label = 'Pixel AUROC', color=color2, lw=1, linestyle='--', marker='o')
     plt.legend()
@@ -88,6 +90,7 @@ def minimum_channel_auroc(color1, color2, size):
     img_auroc = [0.8554, 0.8539, 0.8525, 0.8515, 0.8490, 0.8471, 0.8443, 0.8415, 0.8397, 0.8378, 0.8356, 0.8334, 0.8322, 0.8311, 0.8280]
     pix_auroc = [0.9240, 0.9220, 0.9195, 0.9168, 0.9149, 0.9133, 0.9114, 0.9096, 0.9070, 0.9058, 0.9018, 0.9002, 0.8977, 0.8964, 0.8940]
     plt.rcParams['figure.figsize'] = size
+    plt.grid(True)
     plt.plot(assoc_depth, img_auroc, label = 'Image AUROC', color=color1, lw=1, linestyle='--', marker='o')
     plt.plot(assoc_depth, pix_auroc, label = 'Pixel AUROC', color=color2, lw=1, linestyle='--', marker='o')
     plt.legend()
