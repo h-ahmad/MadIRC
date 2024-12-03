@@ -27,8 +27,8 @@ def association_depth_auroc(color1, color2, size):
     
 def association_depth_precision_recall(color1, color2, size):
     assoc_depth = [0, 5, 10, 15, 20, 25, 30, 35, 40]
-    precision = [0.9987, 0.99882, 0.99885, 0.99894, 0.99899, 0.99898, 0.99895, 0.99893, 0.99892]
-    recall = [0.28900, 0.28912, 0.28921, 0.28930, 0.28925, 0.28909, 0.28897, 0.28894, 0.2888]
+    precision = [0.99862, 0.99877, 0.99883, 0.99894, 0.99899, 0.99898, 0.99897, 0.99895, 0.99893]
+    recall = [0.28900, 0.28915, 0.289231, 0.28937, 0.28940, 0.28937, 0.28924, 0.28916, 0.28903]
     plt.rcParams['figure.figsize'] = size
     fig, ax1 = plt.subplots()
     plt.grid(True)
@@ -37,11 +37,13 @@ def association_depth_precision_recall(color1, color2, size):
     ax1.set_xlabel('Association Depth', fontsize=12)
     ax1.set_ylabel('Tube Precision', fontsize=12, color=color1)
     ax1.tick_params(axis='y', labelcolor=color1)
+    ax1.set_ylim(0.9985, 0.9999)
     ax2 = ax1.twinx()
     ax2.plot(assoc_depth, recall, label = 'Tube Recall', color=color2, lw=1, linestyle='-', marker='o')
     ax2.yaxis.set_major_formatter(FormatStrFormatter('%.4f'))
     ax2.set_ylabel("Tube Recall", color=color2)
     ax2.tick_params(axis='y', labelcolor=color2)
+    ax2.set_ylim(0.2850, 0.2898)
     plt.xticks([0, 10, 20, 30, 40])
     plt.tight_layout()
     plt.savefig('association_depth_precision_recall.pdf')
@@ -168,14 +170,14 @@ if __name__ == '__main__':
     size2 = [6, 6]
     size3 = [8, 8]
     
-    # association_depth_auroc(color1, color2, size1)
+    association_depth_auroc(color1, color2, size1)
     association_depth_precision_recall(color1, color2, size1)
     
-    # maximum_channel_auroc(color1, color2, size1)
-    # maximum_channel_precision_recall(color1, color2, size1)
+    maximum_channel_auroc(color1, color2, size1)
+    maximum_channel_precision_recall(color1, color2, size1)
     
-    # minimum_channel_auroc(color1, color2, size1)
-    # minimum_channel_precision_recall(color1, color2, size1)
+    minimum_channel_auroc(color1, color2, size1)
+    minimum_channel_precision_recall(color1, color2, size1)
     
-    # positional_embedding_auroc(color1, color2, size1)
-    # positional_embedding_precision_recall(color1, color2, size1)
+    positional_embedding_auroc(color1, color2, size1)
+    positional_embedding_precision_recall(color1, color2, size1)
