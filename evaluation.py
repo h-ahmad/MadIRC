@@ -11,8 +11,8 @@ from matplotlib.ticker import MaxNLocator, FormatStrFormatter
 
 def association_depth_auroc(color1, color2, size):
     assoc_depth = [0, 5, 10, 15, 20, 25, 30, 35, 40]
-    img_auroc = [0.8410, 0.8430, 0.8460, 0.8490, 0.8515, 0.8502, 0.8520, 0.8550, 0.8550]
-    pix_auroc = [0.8890, 0.8958, 0.9017, 0.9079, 0.9166, 0.9205, 0.9226, 0.92385, 0.9240]
+    img_auroc = [0.8410, 0.8430, 0.8460, 0.8490, 0.8475, 0.8457, 0.8420, 0.8437, 0.8417]
+    pix_auroc = [0.8890, 0.8958, 0.9037, 0.9152, 0.9210, 0.9205, 0.9185, 0.9159, 0.9142]
     plt.rcParams['figure.figsize'] = size
     plt.grid(True)
     plt.plot(assoc_depth, img_auroc, label = 'Image AUROC', color=color1, lw=1, linestyle='--', marker='o')
@@ -27,8 +27,8 @@ def association_depth_auroc(color1, color2, size):
     
 def association_depth_precision_recall(color1, color2, size):
     assoc_depth = [0, 5, 10, 15, 20, 25, 30, 35, 40]
-    precision = [0.99900, 0.99895, 0.99882, 0.99874, 0.99867, 0.99856, 0.99847, 0.99834, 0.99826]
-    recall = [0.28908, 0.28908, 0.28907, 0.28904, 0.28901, 0.28894, 0.28890, 0.28888, 0.28882]
+    precision = [0.9987, 0.99882, 0.99885, 0.99894, 0.99899, 0.99898, 0.99895, 0.99893, 0.99892]
+    recall = [0.28900, 0.28912, 0.28921, 0.28930, 0.28925, 0.28909, 0.28897, 0.28894, 0.2888]
     plt.rcParams['figure.figsize'] = size
     fig, ax1 = plt.subplots()
     plt.grid(True)
@@ -168,14 +168,14 @@ if __name__ == '__main__':
     size2 = [6, 6]
     size3 = [8, 8]
     
-    association_depth_auroc(color1, color2, size1)
+    # association_depth_auroc(color1, color2, size1)
     association_depth_precision_recall(color1, color2, size1)
     
-    maximum_channel_auroc(color1, color2, size1)
-    maximum_channel_precision_recall(color1, color2, size1)
+    # maximum_channel_auroc(color1, color2, size1)
+    # maximum_channel_precision_recall(color1, color2, size1)
     
-    minimum_channel_auroc(color1, color2, size1)
-    minimum_channel_precision_recall(color1, color2, size1)
+    # minimum_channel_auroc(color1, color2, size1)
+    # minimum_channel_precision_recall(color1, color2, size1)
     
-    positional_embedding_auroc(color1, color2, size1)
-    positional_embedding_precision_recall(color1, color2, size1)
+    # positional_embedding_auroc(color1, color2, size1)
+    # positional_embedding_precision_recall(color1, color2, size1)
